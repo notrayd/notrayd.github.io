@@ -39,8 +39,8 @@
             overflow: hidden;
             transition: max-height 0.3s ease-in-out;
         }
-        #image-container.clicked + #content {
-            max-height: 200px;
+        #image-container:hover + #content {
+            max-height: 200px; /* Slide the links down upon hovering over the image */
         }
     </style>
 </head>
@@ -55,12 +55,5 @@
             <a href="#">whatever you want to put here</a>
         </div>
     </div>
-    <script>
-        const imageContainer = document.getElementById("image-container");
-
-        imageContainer.addEventListener("click", () => {
-            imageContainer.classList.toggle("clicked");
-        });
-    </script>
 </body>
 </html>
