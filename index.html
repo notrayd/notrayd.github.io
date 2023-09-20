@@ -3,11 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test</title>
+    <title>Image Click Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            text-align: center;
+        }
+        #image-container {
+            cursor: pointer;
+        }
+        #content {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <div class="center">
-        <img src="images/zone.png">
+    <div id="container">
+        <div id="image-container">
+            <img src="your-image.jpg" alt="Click me">
+        </div>
+        <div id="content">
+            <h2>Links:</h2>
+            <ul>
+                <li><a href="#">Song Link</a></li>
+                <li><a href="#">Other Stuff Link</a></li>
+            </ul>
+        </div>
     </div>
+    <script>
+        const imageContainer = document.getElementById("image-container");
+        const content = document.getElementById("content");
+
+        imageContainer.addEventListener("click", () => {
+            // Toggle the display of the content when the image is clicked
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        });
+    </script>
 </body>
 </html>
