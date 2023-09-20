@@ -7,7 +7,22 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #ff69b4, #990033); /* Initial gradient */
+            background-size: 400% 400%; /* Larger size to create a smooth transition */
+            animation: gradientAnimation 10s linear infinite; /* Animation for smooth transition */
         }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+
         #container {
             text-align: center;
         }
@@ -21,7 +36,7 @@
             transition: max-height 0.3s ease-in-out;
         }
         #image-container.clicked + #content {
-            max-height: 200px; /* Adjust the maximum height as needed */
+            max-height: 200px;
         }
     </style>
 </head>
@@ -40,7 +55,6 @@
         const imageContainer = document.getElementById("image-container");
 
         imageContainer.addEventListener("click", () => {
-            // Toggle the 'clicked' class to trigger the animation
             imageContainer.classList.toggle("clicked");
         });
     </script>
