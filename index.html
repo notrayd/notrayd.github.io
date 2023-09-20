@@ -15,35 +15,34 @@
             cursor: pointer;
         }
         #content {
-            display: none;
             margin-top: 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+        #image-container.clicked + #content {
+            max-height: 200px; /* Adjust the maximum height as needed */
         }
     </style>
 </head>
 <body>
     <div id="container">
-        <div id="image-container">
-            <img src="your-image.jpg" alt="Click me">
+        <div id="image-container" class="clicked">
+            <img src="/images/logo.png" alt="Click me">
         </div>
         <div id="content">
-            <h2>Links:</h2>
-            <ul>
-                <li><a href="#">Song Link</a></li>
-                <li><a href="#">Other Stuff Link</a></li>
-            </ul>
+<a href="#">Song Link</a>
+<br>
+<a href="#">Other Stuff Link</a>
+ 
         </div>
     </div>
     <script>
         const imageContainer = document.getElementById("image-container");
-        const content = document.getElementById("content");
 
         imageContainer.addEventListener("click", () => {
-            // Toggle the display of the content when the image is clicked
-            if (content.style.display === "none" || content.style.display === "") {
-                content.style.display = "block";
-            } else {
-                content.style.display = "none";
-            }
+            // Toggle the 'clicked' class to trigger the animation
+            imageContainer.classList.toggle("clicked");
         });
     </script>
 </body>
